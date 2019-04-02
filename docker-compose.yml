@@ -1,0 +1,14 @@
+version: '3.3'
+
+
+services:
+  angular-alpine:
+    container_name: angular-alpine
+    image: viniro/angular-alpine:1.0.0
+    command: 'ng serve --host 0.0.0.0 --disable-host-check'
+    volumes:
+      - '.:/srv/app'
+    ports:
+      - '4500:4200'
+    environment:
+      - NODE_ENV=development
